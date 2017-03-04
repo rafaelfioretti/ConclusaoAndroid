@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">ConclusaoAndroid</string>
+    <string name="usuario">Usuário</string>
+    <string name="senha">Senha</string>
+    <string name="conectado">Manter Conectado</string>
+</resources>
