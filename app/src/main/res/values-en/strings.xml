@@ -3,4 +3,5 @@
     <string name="usuario">User</string>
     <string name="senha">Password</string>
     <string name="conectado">Keep Connected</string>
+    <string name="logar">Login</string>
 </resources>
