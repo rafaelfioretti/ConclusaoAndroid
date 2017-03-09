@@ -7,8 +7,21 @@ import android.os.Bundle;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.Toast;
 
-public class SplashActivity extends AppCompatActivity {
+import java.util.List;
+
+import br.com.rafaelfioretti.conclusaoandroid.api.UsuarioAPI;
+import br.com.rafaelfioretti.conclusaoandroid.model.Usuario;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
+import static br.com.rafaelfioretti.conclusaoandroid.MinhaAplicacao.getContext;
+
+public class SplashActivity extends AppCompatActivity implements Callback<List<Usuario>> {
 
     private final int SPLASH_DISPLAY_LENGTH = 3000;
 
@@ -17,6 +30,7 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         carregar();
+        loadUsuario();
     }
 
     private void carregar() {
@@ -42,5 +56,30 @@ public class SplashActivity extends AppCompatActivity {
                 SplashActivity.this.finish();
             }
         }, SPLASH_DISPLAY_LENGTH);
+    }
+
+    private void loadUsuario() {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://www.mocky.io")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        UsuarioAPI api = retrofit.create(UsuarioAPI.class);
+        Call<List<Usuario>> call = api.getUser("58b9b1740f0000b614f09d2f");
+        call.enqueue(this);
+
+    }
+
+    @Override
+    public void onResponse(Call<List<Usuario>> call, Response<List<Usuario>> response) {
+        System.out.print(response);
+        Toast.makeText(getContext(), response.toString(), Toast.LENGTH_SHORT).show();
+
+    }
+
+    @Override
+    public void onFailure(Call<List<Usuario>> call, Throwable t) {
+        Toast.makeText(getContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
+
     }
 }
