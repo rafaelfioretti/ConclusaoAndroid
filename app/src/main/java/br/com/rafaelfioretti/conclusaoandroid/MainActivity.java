@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_cadastrar) {
-
+            cadastrar();
         } else if (id == R.id.nav_listar) {
 
         } else if (id == R.id.nav_sobre) {
@@ -96,6 +96,11 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+
+    public void cadastrar(){
+        startActivity(new Intent(this, CadastrarActivity.class));
     }
 
     public void sobre(){

@@ -1,18 +1,28 @@
 <resources>
     <string name="app_name">FL Condomínio</string>
-    <string name="usuario">Usuário</string>
-    <string name="senha">Senha</string>
-    <string name="conectado">Manter Conectado</string>
-    <string name="logar">Logar</string>
+    <string name="usuario">User</string>
+    <string name="senha">Password</string>
+    <string name="conectado">Keep Connected</string>
+    <string name="logar">Log in</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="deslogando">Deslogando...</string>
+    <string name="deslogando">Logout...</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
-    <string name="Cadastrar">Cadastrar</string>
-    <string name="listar">Listar</string>
-    <string name="sobre">Sobre</string>
-    <string name="sistema">Sistema</string>
-    <string name="logout">Deslogar</string>
+    <string name="Cadastrar">Create</string>
+    <string name="listar">List</string>
+    <string name="sobre">About</string>
+    <string name="sistema">System</string>
+    <string name="logout">Logout</string>
+    <string name="endereco">Adress</string>
+    <string name="condominio">Building</string>
+    <string name="blocos">Qty Building</string>
+    <string name="sindico">Syndic</string>
+    <string name="cadastrosucesso">Inserted Sucessfull</string>
+    <string name="preencherCond">Fill the  \'Building\' \n</string>
+    <string name="preencherEnd">Fill the \'Adress\' \n</string>
+    <string name="preencherBloco">Fill the \'Qty Building\' \n</string>
+    <string name="preencherSind">Fill the \'Syndic\' \n</string>
 </resources>
+

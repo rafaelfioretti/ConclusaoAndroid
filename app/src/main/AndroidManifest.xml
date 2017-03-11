@@ -23,7 +23,8 @@
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".SobreActivity"></activity>
+        <activity android:name=".SobreActivity" />
+        <activity android:name=".CadastrarActivity"></activity>
     </application>
 
 </manifest>

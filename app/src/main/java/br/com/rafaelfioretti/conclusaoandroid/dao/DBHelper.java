@@ -5,7 +5,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import br.com.rafaelfioretti.conclusaoandroid.MinhaAplicacao;
-import br.com.rafaelfioretti.conclusaoandroid.model.Livro;
 
 /**
  * Created by rafaelfioretti on 12/12/16.
@@ -25,6 +24,7 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(UsuarioDAO.createTable());
+        db.execSQL(CondominioDAO.createTable());
        // seed();
         Log.d("tabelas criadas", "sqllite");
 
