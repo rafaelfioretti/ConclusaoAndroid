@@ -2,6 +2,7 @@ package br.com.rafaelfioretti.conclusaoandroid.dao;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import br.com.rafaelfioretti.conclusaoandroid.MinhaAplicacao;
 import br.com.rafaelfioretti.conclusaoandroid.model.Livro;
@@ -25,6 +26,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(UsuarioDAO.createTable());
        // seed();
+        Log.d("tabelas criadas", "sqllite");
 
     }
 
@@ -33,25 +35,5 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
-
-    /*
-    private void seed(){
-        UsuarioDAO livrodao = new UsuarioDAO();
-
-        Livro android = new Livro();
-        android.setAutor("Ricardo Lechetta");
-        android.setEditora("Novatec");
-        android.setTitulo("Google Android");
-        livrodao.insereDado(android);
-
-        Livro torreNegra = new Livro();
-        android.setAutor("Stephen King");
-        android.setEditora("AchoSuma");
-        android.setTitulo("A Torre Negra");
-        livrodao.insereDado(torreNegra);
-
-
-    }
-    */
 
 }

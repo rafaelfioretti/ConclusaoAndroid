@@ -10,7 +10,7 @@ import br.com.rafaelfioretti.conclusaoandroid.model.Usuario;
  */
 
 public class UsuarioDAO {
-    
+
     private SQLiteDatabase db;
 
     public static String createTable() {
@@ -38,18 +38,22 @@ public class UsuarioDAO {
             return "Registro Inserido com sucesso";
     }
 
-    public Cursor carregaDadoById(String usuario) {
+    public Usuario carregaDado() {
         Cursor cursor;
-        String[] campos = {Usuario.SENHA};
-        String where = Usuario.USUARIO + "=" + usuario;
+        Usuario user = new Usuario();
+        String[] campos = {Usuario.USUARIO, Usuario.SENHA};
         db = DatabaseManager.getInstance().openDatabase(true);
-        cursor = db.query(Usuario.NOME_TABELA, campos, where, null, null, null, null, null);
+        cursor = db.query(Usuario.NOME_TABELA, campos, null, null, null, null, null, null);
 
         if (cursor != null) {
-            cursor.moveToFirst();
+            if (cursor.moveToFirst()) {
+                user.setUsuario(cursor.getString(cursor.getColumnIndex(user.USUARIO)));
+                user.setSenha(cursor.getString(cursor.getColumnIndex(user.SENHA)));
+            }
         }
         DatabaseManager.getInstance().closeDatabase();
-        return cursor;
+
+        return user;
     }
-    
+
 }

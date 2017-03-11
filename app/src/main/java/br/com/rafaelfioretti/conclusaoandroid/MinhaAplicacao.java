@@ -23,31 +23,10 @@ public class MinhaAplicacao extends Application {
         Stetho.initializeWithDefaults(this);
         this.context = getApplicationContext();
         DatabaseManager.initializeInstance(new DBHelper());
-        //seed();
     }
 
     public static Context getContext(){
         return context;
 
     }
-
-    /*
-    private void seed(){
-        LivroDAO livrodao = new LivroDAO();
-
-        Livro android = new Livro();
-        android.setAutor("Ricardo Lechetta");
-        android.setEditora("Novatec");
-        android.setTitulo("Google Android");
-        livrodao.insereDado(android);
-
-        Livro torreNegra = new Livro();
-        torreNegra.setAutor("Stephen King");
-        torreNegra.setEditora("AchoSuma");
-        torreNegra.setTitulo("A Torre Negra");
-        livrodao.insereDado(torreNegra);
-
-
-    }
-    */
 }

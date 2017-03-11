@@ -15,6 +15,6 @@ public interface UsuarioAPI {
 
 
     @GET("/v2/{user}")
-    Call<List<Usuario>> getUser(@Path("user") String user);
+    Call<Usuario> getUser(@Path("user") String user);
 
 }

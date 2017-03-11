@@ -4,14 +4,20 @@ import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.facebook.stetho.Stetho;
+
 import java.util.List;
 
 import br.com.rafaelfioretti.conclusaoandroid.api.UsuarioAPI;
+import br.com.rafaelfioretti.conclusaoandroid.dao.DBHelper;
+import br.com.rafaelfioretti.conclusaoandroid.dao.DatabaseManager;
+import br.com.rafaelfioretti.conclusaoandroid.dao.UsuarioDAO;
 import br.com.rafaelfioretti.conclusaoandroid.model.Usuario;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -21,16 +27,17 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 import static br.com.rafaelfioretti.conclusaoandroid.MinhaAplicacao.getContext;
 
-public class SplashActivity extends AppCompatActivity implements Callback<List<Usuario>> {
+public class SplashActivity extends AppCompatActivity implements Callback<Usuario> {
 
     private final int SPLASH_DISPLAY_LENGTH = 3000;
+    Usuario user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        carregar();
         loadUsuario();
+        carregar();
     }
 
     private void carregar() {
@@ -65,21 +72,27 @@ public class SplashActivity extends AppCompatActivity implements Callback<List<U
                 .build();
 
         UsuarioAPI api = retrofit.create(UsuarioAPI.class);
-        Call<List<Usuario>> call = api.getUser("58b9b1740f0000b614f09d2f");
+        Call<Usuario> call = api.getUser("58b9b1740f0000b614f09d2f");
         call.enqueue(this);
+    }
 
+
+    @Override
+    public void onResponse(Call<Usuario> call, Response<Usuario> response) {
+        user = response.body();
+        //user.setUsuario(response.body().getUsuario());
+        //user.setSenha(response.body().getSenha());
+        Log.d("Carregou usuario", "Sucesso");
+        salvarBase();
     }
 
     @Override
-    public void onResponse(Call<List<Usuario>> call, Response<List<Usuario>> response) {
-        System.out.print(response);
-        Toast.makeText(getContext(), response.toString(), Toast.LENGTH_SHORT).show();
-
+    public void onFailure(Call<Usuario> call, Throwable t) {
+        Toast.makeText(this, "Erro durante acessar o serviço que obtem o login", Toast.LENGTH_LONG).show();
     }
 
-    @Override
-    public void onFailure(Call<List<Usuario>> call, Throwable t) {
-        Toast.makeText(getContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
-
+    public void salvarBase(){
+        UsuarioDAO userdao = new UsuarioDAO();
+        userdao.insereDado(user);
     }
 }

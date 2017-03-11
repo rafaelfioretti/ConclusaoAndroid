@@ -27,6 +27,9 @@ public class Usuario implements Parcelable{
         this.senha = senha;
     }
 
+    public Usuario() {
+    }
+
     protected Usuario(Parcel in) {
         usuario = in.readString();
         senha = in.readString();
