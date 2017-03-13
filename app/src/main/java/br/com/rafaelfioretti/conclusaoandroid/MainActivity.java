@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_cadastrar) {
             cadastrar();
         } else if (id == R.id.nav_listar) {
-
+            listar();
         } else if (id == R.id.nav_sobre) {
             sobre();
         } else if (id == R.id.nav_logout) {
@@ -98,6 +98,9 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+    public void listar(){
+        startActivity(new Intent(this, ListarActivity.class));
+    }
 
     public void cadastrar(){
         startActivity(new Intent(this, CadastrarActivity.class));

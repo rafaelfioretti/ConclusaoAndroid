@@ -24,7 +24,8 @@
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".SobreActivity" />
-        <activity android:name=".CadastrarActivity"></activity>
+        <activity android:name=".CadastrarActivity" />
+        <activity android:name=".ListarActivity"></activity>
     </application>
 
 </manifest>
