@@ -84,7 +84,7 @@ public class AlterarActivity extends AppCompatActivity {
         etEnd.setText("");
         etBloco.setText("");
         etSind.setText("");
-        startActivity(new Intent(this, ListarActivity.class));
+        startActivity(new Intent(this, MainActivity.class));
 
     }
 
