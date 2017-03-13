@@ -1,10 +1,14 @@
 package br.com.rafaelfioretti.conclusaoandroid.model;
 
+import android.os.Parcelable;
+
+import java.io.Serializable;
+
 /**
  * Created by rafaelfioretti on 3/11/17.
  */
 
-public class Condominio {
+public class Condominio implements Serializable {
 
         public final static String NOME_TABELA = "condominio";
         public final static String ID = "_id";

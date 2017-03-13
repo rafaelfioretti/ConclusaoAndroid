@@ -12,6 +12,7 @@ import android.view.View;
 import br.com.rafaelfioretti.conclusaoandroid.Adapter.CondominioListAdapter;
 import br.com.rafaelfioretti.conclusaoandroid.dao.CondominioDAO;
 import br.com.rafaelfioretti.conclusaoandroid.listener.OnClickListener;
+import br.com.rafaelfioretti.conclusaoandroid.model.Condominio;
 
 public class ListarActivity extends AppCompatActivity {
 
@@ -51,7 +52,7 @@ public class ListarActivity extends AppCompatActivity {
                     excluir(v);
                 }else
                 {
-                    //editar();
+                    editar();
                 }
             }
 
@@ -61,11 +62,11 @@ public class ListarActivity extends AppCompatActivity {
 
     public void excluir(final View v){
         AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
-        builder1.setMessage("Você tem certeza que deseja excluir?");
+        builder1.setMessage(R.string.msgexcluir);
         builder1.setCancelable(true);
 
         builder1.setPositiveButton(
-                "Yes",
+                R.string.yes,
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         CondominioDAO condDAO = new CondominioDAO();
@@ -76,7 +77,7 @@ public class ListarActivity extends AppCompatActivity {
                 });
 
         builder1.setNegativeButton(
-                "No",
+                R.string.no,
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         dialog.cancel();
@@ -88,7 +89,11 @@ public class ListarActivity extends AppCompatActivity {
 
     }
 
-
-
-
+    public void editar(){
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("cond", mAdapter.getItem(posicao));
+        Intent i = new Intent(this, AlterarActivity.class);
+        i.putExtras(bundle);
+        startActivity(i);
+    }
 }

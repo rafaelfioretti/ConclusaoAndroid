@@ -53,7 +53,7 @@ public class CondominioListAdapter extends RecyclerView.Adapter<CondominioListAd
         holder.tvCond.setText(condominios.get(position).getNome());
         holder.tvEnd.setText(condominios.get(position).getEndereco());
         holder.tvSind.setText(condominios.get(position).getSindico());
-        holder.tvBlocos.setText(condominios.get(position).getBlocos()+ " Blocos");
+        holder.tvBlocos.setText(condominios.get(position).getBlocos()+ " Bloco(s)");
 
         if (onClickListener != null){
             holder.ibEditar.setOnClickListener(new View.OnClickListener() {

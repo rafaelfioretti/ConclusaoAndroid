@@ -9,7 +9,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Configurações</string>
     <string name="Cadastrar">Cadastrar</string>
     <string name="listar">Listar</string>
     <string name="sobre">Sobre</string>
@@ -24,4 +24,10 @@
     <string name="preencherEnd">Prencher o campo \'Endereço\' \n</string>
     <string name="preencherBloco">Prencher o campo \'Bloco\' \n</string>
     <string name="preencherSind">Prencher o campo \'Síndico\' \n</string>
+    <string name="update">Atualizar</string>
+    <string name="atualizadoSucesso">Atualizado com Sucesso</string>
+    <string name="msglogin">Usuário ou senha incorreto(s)</string>
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
+    <string name="msgexcluir">Você tem certeza que deseja excluir?</string>
 </resources>

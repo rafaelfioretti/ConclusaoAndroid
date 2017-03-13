@@ -25,7 +25,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".SobreActivity" />
         <activity android:name=".CadastrarActivity" />
-        <activity android:name=".ListarActivity"></activity>
+        <activity android:name=".ListarActivity" />
+        <activity android:name=".AlterarActivity"></activity>
     </application>
 
 </manifest>

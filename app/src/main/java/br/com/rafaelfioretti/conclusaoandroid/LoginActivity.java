@@ -45,10 +45,7 @@ public class LoginActivity extends AppCompatActivity {
             abrirTela();
         }
         else{
-            Toast.makeText(this, "Usuário Incorreto - Usuario: " + user.getUsuario() + " Senha: " + user.getSenha(), Toast.LENGTH_LONG).show();
-            Toast.makeText(this, "Usuário Incorreto - Usuario: " + etUser.getText() + " Senha: " + etSenha.getText(), Toast.LENGTH_LONG).show();
-
-
+            Toast.makeText(this, R.string.msglogin, Toast.LENGTH_LONG).show();
         }
 
     }

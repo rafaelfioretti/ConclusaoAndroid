@@ -24,5 +24,11 @@
     <string name="preencherEnd">Fill the \'Adress\' \n</string>
     <string name="preencherBloco">Fill the \'Qty Building\' \n</string>
     <string name="preencherSind">Fill the \'Syndic\' \n</string>
+    <string name="update">Update</string>
+    <string name="atualizadoSucesso">Update Successfull</string>
+    <string name="msglogin">User and/or Password Incorrect</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="msgexcluir">Are you sure?</string>
 </resources>
 

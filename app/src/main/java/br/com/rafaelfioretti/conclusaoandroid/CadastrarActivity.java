@@ -33,13 +33,13 @@ public class CadastrarActivity extends AppCompatActivity {
             mensagem += getString(R.string.preencherCond);
         }
         if (etEndereco.getText().toString().equals("")) {
-            mensagem += "Prencher o campo 'Endereço' \n";
+            mensagem += getString(R.string.preencherEnd);
         }
         if (etBlocos.getText().toString().equals("")) {
-            mensagem += "Prencher o campo 'Blocos' \n";
+            mensagem += getString(R.string.preencherBloco);
         }
         if (etSindico.getText().toString().equals("")) {
-            mensagem += "Prencher o campo 'Síndico' \n";
+            mensagem += getString(R.string.preencherSind);
         }
 
         if (mensagem.equals("")) {

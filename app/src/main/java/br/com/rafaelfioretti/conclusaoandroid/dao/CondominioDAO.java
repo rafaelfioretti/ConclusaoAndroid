@@ -116,7 +116,7 @@ public class CondominioDAO {
         db = DatabaseManager.getInstance().openDatabase(false);
         db.delete(Condominio.NOME_TABELA,where,null);
         DatabaseManager.getInstance().closeDatabase();
-    } 
+     }
     
     
 }
